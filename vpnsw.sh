@@ -11,20 +11,18 @@ REGION=$(piactl get region)
 
 echo $REGION
 
-function VPNLONDON()
-{
-	if [[ $REGION = "us-washington-dc" ]]
-	then
-		echo $LONDON
-		echo "Changing Connection to 'UK-London'."
-		sleep 9 	
-	elif [[ $REGION = "uk-london" ]]
-	then
-		echo $WASHDC
-		echo "Changing Connection to 'Wash-DC'."
-		sleep 9
-	fi
-}
+if [[ $REGION = "uk-london" ]]
+then
+	echo $WASHDC
+	echo "Changing Connection to 'Wash-DC'."
+	sleep 9
+
+elif [[ $REGION = "uk-london" ]]
+then
+	echo $LONDON
+	echo "Changing Connection to 'UK-London'."
+	sleep 9
+fi
 
 exit
 
