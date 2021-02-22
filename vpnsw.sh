@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # VPN Switcher
-
 # Switches Wash-DC/UK-London
 
 LONDON=$(piactl set region uk-london)
