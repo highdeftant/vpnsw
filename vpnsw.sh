@@ -6,7 +6,6 @@
 
 LONDON=$(piactl set region uk-london)
 WASHDC=$(piactl set region us-washington-dc)
-REGION=$(piactl get region)
 
 function VPNLONDON() {
 	piactl set region uk-london
@@ -14,21 +13,21 @@ function VPNLONDON() {
 	sleep 3
 }
 
-VPNDC() {
+function VPNDC() {
 	piactl set region us-washington-dc
 	echo "Changing Connection to 'Wash-DC'."
 	sleep 3
 }
 
+read -p "Which Region? [london/wash]" ANSWER
 
-echo $REGION
-
-if [[ $REGION == "us-washington-dc" ]]
+if [[ $ANSWER == "london" ]]
 then
 	VPNLONDON
 	sleep 1
+fi
 
-elif [[ $REGION == "uk-london" ]]
+if [[ $ANSWER == "wash" ]]
 then
 	VPNDC
 	sleep 1
