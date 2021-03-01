@@ -27,7 +27,9 @@ fi
 
 if [[ $ANSWER == "wash" ]]
 then
-	echo "Connect to Wash-DC"
+	echo "Connect to Wash-DC..."
 	VPNDC
 	sleep 1
 fi
+
+exit
