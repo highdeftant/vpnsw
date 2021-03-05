@@ -16,18 +16,16 @@ function VPNDC() {
 	echo "Changing Connection to 'Wash-DC'."
 }
 
-read -p "Which Region? [london/wash]" ANSWER
+read -p "Which Region? [london/washington]" ANSWER
 
 if [[ $ANSWER == "london" ]]
 then
-	echo "Connecting to UK-London..."
 	VPNLONDON
 	sleep 1
 fi
 
-if [[ $ANSWER == "wash" ]]
+if [[ $ANSWER == "washington" ]]
 then
-	echo "Connect to Wash-DC..."
 	VPNDC
 	sleep 1
 fi
